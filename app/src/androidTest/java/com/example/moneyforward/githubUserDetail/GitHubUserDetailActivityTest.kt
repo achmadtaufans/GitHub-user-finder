@@ -24,12 +24,12 @@ class GitHubUserDetailActivityTest {
 
     @Before
     fun setup() {
-        init() // Initialize Espresso Intents
+        init()
     }
 
     @After
     fun tearDown() {
-        release() // Clean up Intents
+        release()
     }
 
     @Test
@@ -41,19 +41,14 @@ class GitHubUserDetailActivityTest {
 
         ActivityScenario.launch<GitHubUserDetailActivity>(intent)
 
-        // Wait a bit for data to load (in a real test use IdlingResource or Espresso-contrib for recycler)
         Thread.sleep(2000)
 
-        // Check toolbar title
         onView(withText("Personal Info")).check(matches(isDisplayed()))
 
-        // Check login is displayed
         onView(withId(R.id.tv_login_user)).check(matches(withText("octocat")))
 
-        // Check image is loaded (just test visibility)
         onView(withId(R.id.img_photo)).check(matches(isDisplayed()))
 
-        // Check following/followers views are visible
         onView(withId(R.id.tv_following_value)).check(matches(isDisplayed()))
         onView(withId(R.id.tv_followers_value)).check(matches(isDisplayed()))
     }
@@ -67,10 +62,8 @@ class GitHubUserDetailActivityTest {
 
        ActivityScenario.launch<GitHubUserDetailActivity>(intent)
 
-        // Wait for repos to load
         Thread.sleep(3000)
 
-        // Simulate clicking on first repo item
         onView(withId(R.id.recyclerViewRepos))
             .perform(
                 androidx.test.espresso.contrib.RecyclerViewActions.actionOnItemAtPosition<androidx.recyclerview.widget.RecyclerView.ViewHolder>(
