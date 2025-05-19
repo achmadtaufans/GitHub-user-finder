@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">MoneyForward</string>
+    <string name="name">Name:</string>
+    <string name="following">Following:</string>
+    <string name="followers">Followers:</string>
+    <string name="repositories">Repositories</string>
+    <string name="list_repositories">list repositories</string>
+    <string name="list_of_user">list of user</string>
+    <string name="search">Search</string>
+    <string name="input_github_users">Input Github Users</string>
+    <string name="repository_name">Repository Name:</string>
+    <string name="development_language">Development Language:</string>
+    <string name="stars">Stars:</string>
+    <string name="descriptions">Descriptions:</string>
+</resources>

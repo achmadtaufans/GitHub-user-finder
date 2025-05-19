@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="vm"
+            type="com.example.moneyforward.ui.githubUserDetail.GitHubUserDetailViewModel" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cv_placeholder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:theme="@style/Theme.MaterialComponents.Light.DarkActionBar"
+        app:cardBackgroundColor="@color/light_grey"
+        app:cardCornerRadius="16dp"
+        app:strokeColor="@color/black"
+        app:strokeWidth="1dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_user_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_name_repo_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/cl_user_item"
+                android:text="@string/repository_name" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_name_repo_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginStart="8dp"
+                app:layout_constraintStart_toEndOf="@id/tv_name_repo_title"
+                app:layout_constraintTop_toTopOf="@id/tv_name_repo_title"
+                tools:text="-" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_development_language_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintTop_toBottomOf="@id/tv_name_repo_value"
+                app:layout_constraintStart_toStartOf="parent"
+                android:text="@string/development_language" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_development_language_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginStart="8dp"
+                app:layout_constraintStart_toEndOf="@id/tv_development_language_title"
+                app:layout_constraintTop_toTopOf="@id/tv_development_language_title"
+                tools:text="-" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_stars_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintTop_toBottomOf="@id/tv_development_language_value"
+                app:layout_constraintStart_toStartOf="parent"
+                android:text="@string/stars" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_stars_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginStart="8dp"
+                app:layout_constraintStart_toEndOf="@id/tv_stars_title"
+                app:layout_constraintTop_toTopOf="@id/tv_stars_title"
+                tools:text="-" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_description_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintTop_toBottomOf="@id/tv_stars_value"
+                app:layout_constraintStart_toStartOf="parent"
+                android:text="@string/descriptions" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_description_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginStart="8dp"
+                app:layout_constraintStart_toEndOf="@id/tv_description_title"
+                app:layout_constraintTop_toTopOf="@id/tv_description_title"
+                tools:text="-" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>
