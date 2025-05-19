@@ -20,7 +20,6 @@ import org.junit.Rule
 import org.junit.Test
 
 class GitHubUserDetailViewModelTest {
- // Rule to allow LiveData to execute instantly
  @get:Rule
  val instantTaskExecutorRule = InstantTaskExecutorRule()
 
@@ -41,7 +40,7 @@ class GitHubUserDetailViewModelTest {
  }
 
  @Test
- fun `fetchGitHubUser success updates user LiveData`() = runTest {
+ fun `fetchGitHubUserAndRepositories success updates user LiveData`() = runTest {
   // Given
   val username = "kenzo"
   val dummyGitHubUser = GitHubUser(
@@ -54,7 +53,14 @@ class GitHubUserDetailViewModelTest {
    following = 5
   )
 
-  val dummyListRepos = listOf(GitHubRepos(name = "Repo1", description = "Description1, fork = false", language = "Kotlin", stargazers_count = 10, fork = false))
+  val dummyListRepos = listOf(
+   GitHubRepos(
+    name = "Repo1",
+    description = "Description1",
+    language = "Kotlin",
+    stargazers_count = 10,
+    fork = false)
+  )
 
   val dummyData = Pair(dummyGitHubUser, dummyListRepos)
 
@@ -70,7 +76,7 @@ class GitHubUserDetailViewModelTest {
  }
 
  @Test
- fun `fetchGitHubUser failure updates error LiveData`() = runTest {
+ fun `fetchGitHubUserAndRepositories failure updates error LiveData`() = runTest {
   // Given
   val username = "unknown_user"
   val exception = RuntimeException("User not found")

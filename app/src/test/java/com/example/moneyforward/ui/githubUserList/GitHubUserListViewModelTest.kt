@@ -20,7 +20,6 @@ import org.junit.Rule
 import kotlin.test.Test
 
 class GitHubUserListViewModelTest {
-  // Rule to allow LiveData to execute instantly
   @get:Rule
   val instantTaskExecutorRule = InstantTaskExecutorRule()
 
@@ -41,7 +40,7 @@ class GitHubUserListViewModelTest {
   }
 
   @Test
-  fun `fetchGitHubUser success updates user LiveData`() = runTest {
+  fun `fetchGitHubUserList success updates user LiveData`() = runTest {
    // Given
    val username = "kenzo"
    val fakeUser = GitHubList(
@@ -72,7 +71,7 @@ class GitHubUserListViewModelTest {
   }
 
   @Test
-  fun `fetchGitHubUser failure updates error LiveData`() = runTest {
+  fun `fetchGitHubUserList failure updates error LiveData`() = runTest {
    // Given
    val username = "unknown_user"
    val exception = RuntimeException("User not found")
