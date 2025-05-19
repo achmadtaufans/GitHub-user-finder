@@ -12,7 +12,7 @@ class GitHubRepository(private val api: GitHubApi) {
     suspend fun getListUser(keyWords: String): GitHubList {
         return api.searchUsers(keyWords)
     }
-    suspend fun getListUserRepos(username: String): List<GitHubRepos> {
+    suspend fun getListUserReposNonForked(username: String): List<GitHubRepos> {
         val repos = api.getUserRepos(username)
         return repos.filter { !it.fork }
     }

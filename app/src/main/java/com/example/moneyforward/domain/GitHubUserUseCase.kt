@@ -10,7 +10,7 @@ class GetGitHubUserUseCase(
     suspend operator fun invoke(username: String): Result<Pair<GitHubUser, List<GitHubRepos>>> {
         return try {
             val user = repository.getUser(username)
-            val repos = repository.getListUserRepos(username)
+            val repos = repository.getListUserReposNonForked(username)
             Result.success(Pair(user, repos))
         } catch (e: Exception) {
             Result.failure(e)
